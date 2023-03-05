@@ -9,7 +9,7 @@ Dusa Boarding was designed to achieve efficient liquidity with an autonomous liq
 
 We proposed a feature of our fully on-chain AMM by offering two things:
 
-1. The Autonomous Liquidity
+**1. The Autonomous Liquidity**
 
 Autonomous Liquidity allows for an easier user experience while improving the efficiency of the liquidity available on the DEX for UNIv3 type DEX models. Indeed, with this new type of liquidity, users no longer have to manage their liquidity positions because our smart contracts replace them every half second to ensure that they are optimally placed.
 
@@ -17,6 +17,6 @@ This greatly facilitates the user experience as this feature saves users many ho
 
 The use of Autonomous Smart Contracts to 1) successively trigger events according to pre-established conditions and 2) remain entirely within the blockchain. This innovation eliminates off-chain initiators and optimizes the liquidity mechanism with an autonomous liquidity. See the whitepaper explaining the mechanisms here: https://docsend.com/view/jrbfh8ppzjp5pbns
 
-The integration of Lens threads
+**2. The integration of Lens threads**
 
 The user of a decentralized application must be informed and educated to benefit from an optimal use. This is why we implemented the possibility to see threads on Lens to keep our values on decentralization.
