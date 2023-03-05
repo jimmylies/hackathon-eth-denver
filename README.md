@@ -1,5 +1,3 @@
-## TODO
+## Dusa
 
-- Refresh slippage percentage displayed once modified by the user
-- Consider switching to reducer in usePairManager
-- Implement SCSS modules?
+- To try our projet, just have a look on this [website](https://sage-cuchufli-49d0d4.netlify.app)
