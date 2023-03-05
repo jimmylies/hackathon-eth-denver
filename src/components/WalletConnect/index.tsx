@@ -9,6 +9,7 @@ import { provider } from 'web3-core';
 
 const WalletConnect = () => {
   const [showModal, setShowModal] = useState(false);
+  const [connected, setConnected] = useState(false);
   const magic = new Magic('pk_live_A7B04A08D018FCED', {
     network: {
       rpcUrl: 'https://polygon-rpc.com',
@@ -16,38 +17,30 @@ const WalletConnect = () => {
     }
   });
   const web3 = new Web3(magic.rpcProvider as provider);
-  const accounts = async () => {
-    await magic.wallet.connectWithUI();
-  };
 
-  const connected = false;
-
-  const disconnect = () => {
-    // const handleLogout = async () => {
-    //   await magic.user.logout();
-    //   render();
-    // };
+  const disconnect = async () => {
+    await magic.wallet.disconnect();
+    render();
   };
 
   useEffect(() => {
-    console.log(magic);
-    console.log(web3);
-  });
+    render();
+  }, [magic.wallet]);
 
   const login = async () => {
-    accounts();
-
-    // render();
+    await magic.wallet.connectWithUI();
+    render();
   };
 
   const render = async () => {
-    const isLoggedIn = await magic.user.isLoggedIn();
-
-    if (isLoggedIn) {
-      /* Get user metadata including email */
-      const userMetadata = await magic.user.getMetadata();
-      console.log(userMetadata);
-    }
+    await magic.wallet
+      .getInfo()
+      .then(() => {
+        setConnected(true);
+      })
+      .catch(() => {
+        setConnected(false);
+      });
   };
 
   return (
