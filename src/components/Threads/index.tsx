@@ -14,7 +14,8 @@ const Threads = () => {
           document.body.style.overflow = 'hidden';
         }}
       >
-        <span>Our threads on Lens</span>
+        <span className='first'>Our threads on Lens</span>
+        <span className='sec'>Threads</span>
         <svg
           width='20'
           height='22'

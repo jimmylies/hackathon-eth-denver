@@ -26,4 +26,18 @@
     color: #12ee28;
     border: 1px solid #12ee28 !important;
   }
+
+  .sec {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 800px){
+  .first {
+    display: none;
+  }
+  .sec {
+    display: flex !important;
+  }
 }
