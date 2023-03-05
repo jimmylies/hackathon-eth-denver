@@ -113,9 +113,7 @@ const SwapCard = ({
           token={token1}
           changeToken={(t: Token) => changeToken(t, false)}
           quantity={
-            !advanced
-              ? quantity0 * price * ((100 - priceImpact) / 100)
-              : limitValue * quantity0
+            quantity0
           }
           changeQuantity={(q: number) =>
             changeQuantityWithPriceImpact(q, false)
@@ -152,7 +150,7 @@ const SwapCard = ({
               </div>
               <input
                 type='number'
-                value={isSellOrder ? limitValue : 1 / limitValue}
+                value={1}
                 onChange={handleChangeLimit}
               />
               <div className='bottom'>
