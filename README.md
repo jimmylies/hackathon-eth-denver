@@ -2,7 +2,9 @@
 
 - To try our projet, just have a look on this [website](https://sage-cuchufli-49d0d4.netlify.app)
 
-- See the whitepaper : https://docsend.com/view/jrbfh8ppzjp5pbns 
+- See the whitepaper: https://docsend.com/view/jrbfh8ppzjp5pbns 
+
+- See the video demo: https://app.buidlbox.io/projects/dusa-boarding 
 
 
 Dusa Boarding was designed to achieve efficient liquidity with an autonomous liquidity while being entirely on the blockchain to increase security. In addition, we offer efficient user onboarding with Lens.
