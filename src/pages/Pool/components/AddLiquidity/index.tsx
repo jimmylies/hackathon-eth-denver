@@ -163,33 +163,26 @@ const AddLiquidity = ({ setTokenA, setTokenB }: addliquidity) => {
         )}
         <div className='liquidity-shape'>
           <div className='liquidity-container'>
-            {[
-              { svg1: autonomousCenter(), name: 'Autonomous*' },
-             
-            ].map((item, index) => {
-              return (
-                <div
-                  className={`liquidity-shape-item ${
-                    index === nbActive ? 'active' : ''
-                  } ${index === 0 ? 'autonomous' : ''}`}
-                  key={index}
-                  onClick={() => {
-                    setNbActive(index);
-                  }}
-                >
-                  {index === 0 ? (
-                    <>
-                      {autonomousLeft()}
-                      {autonomousCenter()}
-                      {autonomousRight()}
-                    </>
-                  ) : (
-                    <>{item.svg}</>
-                  )}
-                  <span>{item.name}</span>
-                </div>
-              );
-            })}
+            {[{ svg1: autonomousCenter(), name: 'Autonomous*' }].map(
+              (item, index) => {
+                return (
+                  <div
+                    className={`liquidity-shape-item ${
+                      index === nbActive ? 'active' : ''
+                    } ${index === 0 ? 'autonomous' : ''}`}
+                    key={index}
+                    onClick={() => {
+                      setNbActive(index);
+                    }}
+                  >
+                    {autonomousLeft()}
+                    {autonomousCenter()}
+                    {autonomousRight()}
+                    <span>{item.name}</span>
+                  </div>
+                );
+              }
+            )}
           </div>
         </div>
         <div className='buttonAndLens'>
