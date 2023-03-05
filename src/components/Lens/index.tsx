@@ -8,7 +8,18 @@ interface LensProps {
 
 const Lens = ({ text }: LensProps) => {
   return (
-    <div className='Lens'>
+    <a
+      className='Lens'
+      href={
+        text === 'Limit Order'
+          ? 'https://lenster.xyz/posts/0x01999b-0x23'
+          : text === 'Swap'
+          ? 'https://lenster.xyz/posts/0x01999b-0x0d'
+          : 'https://lenster.xyz/posts/0x01999b-0x15'
+      }
+      target='_blank'
+      rel='noreferrer'
+    >
       <span>
         <FontAwesomeIcon icon={faCircleInfo} /> {text} details
       </span>
@@ -77,7 +88,7 @@ const Lens = ({ text }: LensProps) => {
           </clipPath>
         </defs>
       </svg>
-    </div>
+    </a>
   );
 };
 

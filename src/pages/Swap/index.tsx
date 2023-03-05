@@ -3,14 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { fetchActiveOrders } from 'utils/datastoreFetcher';
 import { tokens } from 'utils/tokens';
-import { profile, urqlClient } from 'utils/urql-client';
 import SwapCard from './components/SwapCard';
 import './index.scss';
 
 const Swap = ({ profile }) => {
-  useEffect(() => {
-    getServerSideProps();
-  });
   console.log(profile);
   const [token0, setToken0] = useState(tokens[0]);
   const [token1, setToken1] = useState(tokens[1]);
@@ -62,13 +58,3 @@ const Swap = ({ profile }) => {
 };
 
 export default Swap;
-
-export async function getServerSideProps() {
-  const response = await urqlClient.query(profile, '' as any).toPromise();
-  console.log(response.data.profile);
-  return {
-    props: {
-      profile: response?.data?.profile
-    }
-  };
-}

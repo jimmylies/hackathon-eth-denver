@@ -5,7 +5,6 @@ import {
   ProviderType,
   WalletClient
 } from '@massalabs/massa-web3';
-import { WalletContext } from 'context/WalletContext';
 
 export const baseAccount = await WalletClient.getAccountFromSecretKey(
   import.meta.env.VITE_WALLET_SECRET_KEY
