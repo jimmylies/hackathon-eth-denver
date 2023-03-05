@@ -59,49 +59,9 @@ const SwapCard = ({
     fetchBalances
   } = usePairManager({ token0, setToken0, token1, setToken1 });
 
-  const { submitTx: swap, isTxPending: pendingSwap } = useSendTransaction({
-    data: buildSwapTx(
-      token0.address,
-      token1.address,
-      quantity0 * 10 ** token0.decimals,
-      (quantity1 * 10 ** token0.decimals * (100 - getSlippage())) / 100
-    )
-  });
-  const { submitTx: increaseAllowance0 } = useSendTransaction({
-    data: buildIncreaseAllowanceTx(
-      token0.address,
-      pairAddress,
-      1000000000 * 10 ** 9
-    )
-  });
-  const { submitTx: increaseAllowance1 } = useSendTransaction({
-    data: buildIncreaseAllowanceTx(
-      token1.address,
-      pairAddress,
-      1000000000 * 10 ** 9
-    )
-  });
-  const { submitTx: _addLimitOrder, isTxPending: pendingOrder } =
-    useSendTransaction({
-      data: buildAddOrderTx(
-        token0.address,
-        token1.address,
-        quantity0 * 10 ** token0.decimals,
-        limitValue ?? 0
-      )
-    });
-
-  const isTxPending = pendingSwap || pendingOrder;
-
   const invertTokensWrap = () => {
     invertTokens();
     setInvert((prevState) => !prevState);
-  };
-
-  const addLimitOrder = async () => {
-    await _addLimitOrder();
-
-    fetchBalances();
   };
 
   const handleChangeLimit = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -239,25 +199,13 @@ const SwapCard = ({
         )}
         <div className='buttonAndLens'>
           {advanced ? (
-            <Button
-              variant='outlined'
-              text='Place an order'
-              onClick={addLimitOrder}
-            />
+            <Button variant='outlined' text='Place an order' />
           ) : (
             <Button
               variant='outlined'
               text={`${
                 (userAllowance0 && userAllowance1) === 0 ? 'Swap' : 'Swap'
               }`}
-              onClick={
-                (userAllowance0 && userAllowance1) === 0
-                  ? () => {
-                      increaseAllowance0(true);
-                      increaseAllowance1(false);
-                    }
-                  : () => swap()
-              }
             />
           )}
 

@@ -75,8 +75,8 @@
       &:hover::after {
         content: '*The autonomous liquidity allows you to provide liquidity without having to manage and rebalance it at each price mouvement.';
         position: absolute;
-        top: 110%;
-        left: 0;
+        top: 0;
+        left: 105%;
         width: 300px;
         font-size: 0.85rem;
         font-family: 'Inter custom', sans-serif;

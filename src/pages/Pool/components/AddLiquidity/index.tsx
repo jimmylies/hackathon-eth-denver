@@ -60,48 +60,6 @@ const AddLiquidity = ({ setTokenA, setTokenB }: addliquidity) => {
     setTokenB(token1);
   }, [price, balance0, balance1, token0, token1]);
 
-  const { isTxPending, submitTx } = useSendTransaction({
-    data: buildAddLiquidityTx(
-      token0,
-      token1,
-      quantity0 * 10 ** token0.decimals,
-      quantity1 * 10 ** token1.decimals
-    )
-  });
-  console.log(quantity0, quantity1);
-
-  const { isTxPending: isTxAllowancePending1, submitTx: increaseAllowance1 } =
-    useSendTransaction({
-      data: buildIncreaseAllowanceTx(
-        token0.address,
-        routerSC,
-        1_000_000_000 * 10 ** token0.decimals
-      )
-    });
-  const { isTxPending: isTxAllowancePending2, submitTx: increaseAllowance2 } =
-    useSendTransaction({
-      data: buildIncreaseAllowanceTx(
-        token1.address,
-        routerSC,
-        1_000_000_000 * 10 ** token1.decimals
-      )
-    });
-
-  const addLiquidity = async () => {
-    increaseAllowance1(true);
-    increaseAllowance2(true)
-      .finally()
-      .then(() => {
-        submitTx(true)
-          .finally()
-          .then(() => {
-            fetchBalances();
-          });
-      });
-
-    fetchBalances();
-  };
-
   const { poolToken0, poolToken1 } = useParams();
   useEffect(() => {
     if (poolToken0 && poolToken1) {
@@ -186,11 +144,7 @@ const AddLiquidity = ({ setTokenA, setTokenB }: addliquidity) => {
           </div>
         </div>
         <div className='buttonAndLens'>
-          <Button
-            variant='outlined'
-            text={'Add Liquidity'}
-            onClick={addLiquidity}
-          />
+          <Button variant='outlined' text={'Add Liquidity'} />
           <Lens text={'Add Liquidity'} />
         </div>
       </div>

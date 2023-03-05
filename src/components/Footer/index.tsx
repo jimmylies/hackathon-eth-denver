@@ -26,7 +26,8 @@ const Footer = () => {
             <span>protocol</span>
           </Link>
           <div className='description'>
-            The first super user friendly trading protocol on Polygon
+            AMM with an autonomous liquidity powered by the use of autonomous
+            smart-contracts & an on-chain education with threads on Lens.
           </div>
         </div>
       </div>
