@@ -1,0 +1,16 @@
+.Swap {
+  display: flex;
+  margin-top: 5rem;
+
+  .chart-feature-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+    gap: 2rem;
+
+    > div {
+      margin: 0 1rem;
+    }
+  }
+}

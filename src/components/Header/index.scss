@@ -1,0 +1,156 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 50px;
+
+  a {
+    color: var(--main-color);
+    transition: background-color 0.1s ease-out;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .link-pages {
+    display: flex;
+    align-items: center;
+
+    .logo-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 32px;
+        height: 32px;
+        transition: transform 0.3s ease 0s;
+
+        &:hover {
+          transform: rotate(-5deg);
+        }
+      }
+      span {
+        margin-left: 8px;
+        color: var(--main-color);
+        font-size: 1.3rem;
+        font-weight: 700;
+        font-family: 'Red Hat Display', sans-serif;
+      }
+    }
+
+    nav {
+      display: flex;
+      padding: 0 20px;
+      height: 50px;
+
+      .link-page,
+      .other {
+        display: flex;
+        align-items: center;
+        margin: 0 1rem;
+      }
+
+      .link-page {
+        border-top: 4px solid transparent;
+
+        &[aria-current='page'] {
+          color: var(--secondary-color);
+        }
+        &:hover {
+          border-top: 4px var(--secondary-color) solid;
+        }
+      }
+
+      .other {
+        position: relative;
+
+        &:hover {
+          .other-dropdown {
+            display: flex;
+          }
+        }
+
+        .other-dropdown {
+          display: none;
+          flex-direction: column;
+          border: 1px solid var(--secondary-color-transp);
+          position: absolute;
+          top: 100%;
+          right: 0;
+          border-radius: 0.25rem;
+
+          a {
+            padding: 0.75rem 0.5rem;
+
+            &:hover {
+              background-color: var(--opaque-bg);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .utils {
+    display: flex;
+    align-items: center;
+
+    .buy-dusa {
+      display: flex;
+      align-items: center;
+      margin: 0 5px;
+
+      img {
+        height: 1.5rem;
+        border-radius: 50%;
+      }
+
+      span {
+        padding: 0 0.25rem;
+      }
+    }
+
+    > div:first-child,
+    .WalletConnect {
+      background-color: var(--secondary-bg);
+      cursor: pointer;
+      margin: 0 5px;
+      border: 1px solid var(--secondary-color-transp);
+
+      &:hover {
+        border: 1px solid var(--secondary-color);
+      }
+    }
+  }
+
+  .onchain {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: default !important;
+
+    svg {
+      cursor: default;
+    }
+
+    span {
+      font-weight: 500;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  nav {
+    position: fixed;
+    bottom: 0px;
+    right: 50%;
+    margin: 0 auto;
+    background-color: var(--main-bg);
+    border: 1px solid var(--hover-bg);
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.211) 0px 6px 10px;
+    transform: translate(50%, -50%);
+    z-index: 500;
+  }
+}

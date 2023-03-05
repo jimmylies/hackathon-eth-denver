@@ -1,0 +1,29 @@
+.Threads {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  text-align: center;
+  padding: 0 15px;
+  height: 36px;
+  font-size: 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  white-space: break-spaces;
+  user-select: none;
+  position: relative;
+  background: transparent;
+  color: #0bb81c;
+  border: 1px solid #0bb81c !important;
+  cursor: pointer;
+
+  svg {
+    border-radius: 0.25rem;
+  }
+
+  &:hover {
+    color: #12ee28;
+    border: 1px solid #12ee28 !important;
+  }
+}

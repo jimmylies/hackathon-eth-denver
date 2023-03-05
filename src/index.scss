@@ -1,0 +1,124 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-feature-settings: 'ss01' on, 'ss02' on, 'cv01' on, 'cv03' on;
+}
+
+@font-face {
+  font-family: 'Inter custom';
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: block;
+  font-named-instance: 'Regular';
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.13.1/Inter%20(web)/Inter-roman.var.woff2')
+      format('woff2 supports variations(gvar)'),
+    url('https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.13.1/Inter%20(web)/Inter-roman.var.woff2')
+      format('woff2-variations'),
+    url('https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.13.1/Inter%20(web)/Inter-roman.var.woff2')
+      format('woff2');
+}
+
+@supports (font-variation-settings: normal) {
+  * {
+    font-family: 'Inter custom', sans-serif !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+body {
+  background: var(--main-bg);
+  color: var(--main-color);
+  font-family: 'Quicksand', sans-serif;
+  scroll-behavior: smooth;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+// FontAwesome icons
+[data-prefix='fas'],
+button {
+  cursor: pointer;
+}
+
+img,
+a {
+  -webkit-user-drag: none;
+}
+
+input,
+button {
+  background: transparent;
+  border: none;
+  color: var(--main-color);
+}
+
+.Toastify__toast-container.Toastify__toast-container--top-right > div {
+  background-color: var(--hover-bg);
+}
+
+// HIDE INPUT NUMBER SCROLLBAR
+
+// Chrome, Safari, Edge, Opera
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+// Firefox
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 50px);
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 350px;
+  max-width: 437px;
+  border-radius: 1rem;
+
+  .Button {
+    margin: 0 auto;
+  }
+}
+
+.header-feature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  padding-bottom: 0;
+}
+.container-feature {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 850px) {
+  .feature {
+    min-width: 0 !important;
+  }
+}

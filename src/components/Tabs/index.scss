@@ -1,0 +1,33 @@
+.Tabs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tab {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+  font-weight: 600;
+  color: var(--main-color);
+  background-color: transparent;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  cursor: pointer;
+
+  a,
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 1rem;
+  }
+}
+.activeTab {
+  color: var(--main-color);
+  background-color: var(--secondary-bg);
+}

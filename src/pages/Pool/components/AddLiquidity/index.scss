@@ -1,0 +1,163 @@
+.AddLiquidity {
+  .container-feature {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .TokenInput-wrapper {
+    position: relative;
+    margin-bottom: 4px;
+
+    .plus {
+      position: absolute;
+      padding: 4px;
+      border-radius: 0.5rem;
+      left: calc(50% - 16px);
+      background-color: var(--secondary-bg);
+      border: 4px solid var(--hover-bg);
+      z-index: 2;
+      margin: -13px 0;
+    }
+  }
+
+  .liquidity-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    .liquidity-shape-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0.5rem;
+      padding: 0.2rem;
+      border: 1px solid transparent;
+
+      &:hover {
+        cursor: pointer;
+        background-color: var(--hover-bg);
+      }
+
+      span {
+        font-size: 0.8rem;
+        color: var(--second-color);
+      }
+    }
+
+    .liquidity-shape-item.active {
+      border: 1px solid var(--secondary-color);
+      background-color: var(--hover-bg);
+    }
+
+    .autonomous {
+      position: relative;
+
+      svg:first-child {
+        position: absolute;
+        top: 0.2rem;
+        animation: 10s ease-in 0s infinite opacitySvgLeft;
+        opacity: 0;
+      }
+
+      svg:nth-child(2) {
+        animation: 10s ease-in 0s infinite opacitySvgCenter;
+      }
+
+      svg:nth-child(3) {
+        position: absolute;
+        top: 0.2rem;
+        animation: 10s ease-in 0s infinite opacitySvgRight;
+        opacity: 0;
+      }
+
+      &:hover::after {
+        content: '*The autonomous liquidity allows you to provide liquidity without having to manage and rebalance it at each price mouvement.';
+        position: absolute;
+        top: 110%;
+        left: 0;
+        width: 300px;
+        font-size: 0.85rem;
+        font-family: 'Inter custom', sans-serif;
+        background-color: var(--hover-bg);
+        padding: 0.3rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--secondary-color);
+      }
+    }
+  }
+  .liquidity-details {
+    margin: 1rem 0;
+    text-align: center;
+    background-color: var(--hover-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--secondary-color-transp);
+
+    .price {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+@keyframes opacitySvgLeft {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes opacitySvgCenter {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacitySvgRight {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 910px) {
+  .liquidity-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}

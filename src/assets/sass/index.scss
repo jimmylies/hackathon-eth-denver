@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// [data-theme='dark'] {
+//   --main-color: #eee;
+//   --second-color: #aaa;
+//   --main-bg: #333;
+//   --secondary-bg: #222;
+//   --third-bg: #111111c9;
+//   --scrollbar-color: #bea5a593;
+//   --urlBg: url('../img/backgroundDark.jpg');
+// }
+
+:root {
+  --main-color: #eee;
+  --second-color: #aaa;
+  --secondary-color: #7592fc;
+  --secondary-color-transp: #494f7cc6;
+  --third-color: #edf4ff;
+  --fourth-color: #4791ff;
+  --main-bg: #0e1320;
+  --secondary-bg: #161f34;
+  --third-bg: #111111c9;
+  --opaque-bg: #111928af;
+  --hover-bg: #1c263e;
+  --white: #fff;
+}

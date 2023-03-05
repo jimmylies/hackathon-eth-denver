@@ -1,0 +1,163 @@
+.TokenModal {
+  z-index: 999;
+  font-family: 'Red Hat Display', sans-serif;
+
+  .TokenModal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(1rem);
+    z-index: 2;
+
+    .TokenModal-container {
+      display: flex;
+      flex-direction: column;
+      height: 600px;
+      width: 375px;
+      background: var(--main-bg);
+      border-radius: 1rem;
+      box-shadow: rgba(175, 204, 255, 0.25) 0px 4px 8px -2px, rgba(162, 193, 246, 0.08) 0px 0px 0px 1px;
+
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 10%;
+        padding: 0 20px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        border-bottom: 2px solid var(--secondary-bg);
+      }
+
+      .TokenModal-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1.25rem 0;
+        height: 90%;
+
+        input {
+          width: 90%;
+          height: 40px;
+          margin: 0 auto 1rem;
+          padding: 1.25rem;
+          background-color: var(--secondary-bg);
+          color: var(--main-color);
+          border-radius: 1rem;
+
+          &:focus {
+            outline: var(--secondary-color) solid 3px;
+          }
+        }
+
+        .token-list {
+          height: 100%;
+          overflow-y: scroll;
+          padding: 1rem 0;
+
+          .token {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+
+            &:not(.active):hover {
+              background-color: var(--hover-bg);
+            }
+
+            &.active {
+              opacity: 0.5;
+            }
+
+            > div {
+              display: flex;
+              align-items: center;
+              border-radius: 5px;
+            }
+            img,
+            svg {
+              width: 24px;
+              height: 24px;
+              border-radius: 50%;
+            }
+
+            .result-token-info {
+              flex-grow: 1;
+              display: flex;
+              align-items: center;
+
+              span:first-of-type {
+                padding: 0 0.5rem;
+              }
+
+              span:last-of-type {
+                width: 15ch;
+              }
+            }
+
+            .token-info {
+              display: flex;
+              flex-direction: column;
+              margin-left: 10px;
+
+              span:last-of-type {
+                width: 30ch;
+              }
+
+              button {
+                width: inherit;
+              }
+            }
+
+            .nowrap {
+              color: var(--second-color);
+              font-size: 0.8rem;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              overflow: hidden;
+            }
+
+            svg {
+              opacity: 0;
+              padding: 0.5rem;
+              transition: transform 0.3s ease 0s;
+              color: var(--secondary-color);
+              transition: transform 0.3s ease 0s;
+            }
+            &:hover {
+              svg {
+                opacity: 1;
+
+                &:hover {
+                  transform: rotate(90deg);
+                }
+              }
+            }
+          }
+
+          .Button {
+            margin: 0;
+            padding: 0.5rem 1.25rem;
+          }
+
+          .result-token {
+            cursor: default;
+
+            &:hover {
+              background-color: transparent !important;
+            }
+
+            svg {
+              cursor: default;
+            }
+          }
+        }
+      }
+    }
+  }
+}

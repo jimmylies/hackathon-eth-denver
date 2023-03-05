@@ -1,0 +1,147 @@
+.MyLiquidity {
+  .my-liquidity {
+    display: flex;
+    flex-direction: column;
+    > span:first-child {
+      font-size: 1.6rem;
+      font-weight: 600;
+      width: 100%;
+    }
+    > span:nth-child(2) {
+      font-size: 1rem;
+      font-weight: 400;
+      width: 100%;
+      margin-bottom: 2rem;
+      color: var(--second-color);
+    }
+  }
+
+  .container-feature {
+    padding: 0;
+  }
+
+  .liquidity-container {
+    display: flex;
+    flex-direction: column;
+    opacity: 0.85;
+
+    .liquidity,
+    .no-liquidity {
+      background-color: var(--hover-bg);
+      padding: 3rem 0;
+      border-radius: 0.5rem;
+      border: 1px solid var(--secondary-color-transp);
+    }
+
+    .no-liquidity {
+      text-align: center;
+    }
+
+    .liquidity {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 0.5rem;
+      border: 1px solid var(--secondary-color-transp);
+      border-radius: 0.5rem;
+
+      .thumbail {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .liquidity-info {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          margin-left: 0.5rem;
+
+          img {
+            margin-right: 0.4rem;
+          }
+
+          > div {
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.05rem;
+
+            div {
+              padding-top: 5rem;
+              align-items: center;
+            }
+            span {
+              margin: 0 0.5rem;
+            }
+          }
+
+          .liquidity-quantity {
+            margin-right: 0.5rem;
+          }
+
+          svg {
+            padding: 0 0.5rem;
+          }
+
+          // & > div {
+          //   display: flex;
+          //   align-items: center;
+          // }
+        }
+      }
+
+      .details {
+        display: flex;
+        flex-direction: column;
+        padding-top: 1.5rem;
+
+        .detail {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0.25rem 0;
+          margin-left: 0.5rem;
+
+          > div {
+            display: flex;
+            align-items: center;
+          }
+
+          span {
+            margin-right: 1rem;
+          }
+        }
+      }
+
+      .actions {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 1rem 0 0.5rem 0;
+
+        button {
+          white-space: nowrap;
+        }
+      }
+
+      img {
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+        margin-right: 0.4rem;
+      }
+    }
+  }
+
+  .findPool {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span {
+      margin: 0.5rem 0;
+    }
+  }
+}

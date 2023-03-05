@@ -1,0 +1,159 @@
+.Pool {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .tabs-container {
+    width: 100% !important;
+  }
+
+  .feature {
+    max-width: none;
+  }
+}
+
+.infos-pools,
+.tabs-content {
+  max-width: 1200px;
+  margin: 0px auto;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.header-infos {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Pool .title-header-infos {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 0;
+
+  > div:first-child {
+    transform: translateX(-1rem);
+  }
+
+  a {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+    &:hover {
+      background-color: var(--secondary-bg);
+    }
+  }
+
+  span {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .title-tokens {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 30px;
+      height: 30px;
+      margin-right: 0.5rem;
+    }
+
+    > div {
+      display: flex;
+      align-items: center;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    span:nth-child(3) {
+      margin: 0.5rem;
+    }
+  }
+}
+
+.container-pools {
+  width: 100%;
+
+  > .Tabs {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0px auto;
+
+    .tab {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+  }
+
+  .tabs-container {
+    background-color: var(--secondary-bg);
+    min-height: 100vh;
+  }
+}
+
+.tabs-content {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+
+  .analytics {
+    padding: 3rem 0;
+    background-color: var(--hover-bg);
+    border-radius: 0.5rem;
+    border: 1px solid var(--secondary-color-transp);
+    text-align: center;
+  }
+
+  .my-pool .categories {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .manage-liquidity {
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: repeat(2, 1fr);
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .add-liquidity {
+    > span:first-child {
+      font-size: 1.6rem;
+      font-weight: 600;
+      width: 100%;
+    }
+    > span:nth-child(2) {
+      font-size: 1rem;
+      font-weight: 400;
+      width: 100%;
+      margin-bottom: 2rem;
+      color: var(--second-color);
+    }
+
+    .container-feature {
+      padding: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 910px) {
+  .manage-liquidity {
+    display: flex !important;
+    flex-direction: column-reverse;
+    grid-template-columns: 1fr !important;
+  }
+}
